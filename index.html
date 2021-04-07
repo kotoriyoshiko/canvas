@@ -6,10 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画板</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <div id="canvas">
+    </div>
+    <script>
+        canvas.onclick = (e) => {
+            console.log(e.clientX)
+            console.log(e.clientY);
+            //console.log 调试大法
+            let div = document.createElement('div')
+            //创建一个div
+            div.style.position = 'absolute'
+            div.style.left = e.clientX + 'px'
+            div.style.top = e.clientY + 'px'
+            // div.style.border = '1px solid red'
+            div.style.height = '6px'
+            div.style.width = '6px'
+            div.style.marginLeft = '-3px'
+            div.style.marginTop = '-3px'
+            //让鼠标在小方块中间
+            div.style.borderRadius = '50%'
+            //把正方形变成圆
+            div.style.background = 'black'
+            //把圆变成实心, 其实就是填充背景
+            canvas.appendChild(div)
+            //把div弄到canvas里
+        }
+    </script>
 </body>
 
 </html>
